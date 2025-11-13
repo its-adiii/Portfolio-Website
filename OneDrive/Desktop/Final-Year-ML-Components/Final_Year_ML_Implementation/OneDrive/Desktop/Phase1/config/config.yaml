@@ -1,0 +1,99 @@
+# IoT Security System Configuration
+
+# Blockchain Settings
+blockchain:
+  difficulty: 2  # Proof of work difficulty
+  auto_mine: true  # Automatically mine pending transactions
+  mine_interval: 60  # Seconds between mining operations
+
+# Security Settings
+security:
+  anomaly_threshold: 0.7  # Confidence threshold for anomaly detection
+  alert_severity_levels:
+    - low
+    - medium
+    - high
+    - critical
+  
+  # Access control
+  access_control:
+    default_permission_duration: 24  # Hours
+    require_2fa: false
+    max_failed_attempts: 3
+
+# ML Model Settings
+ml_models:
+  anomaly_detection:
+    isolation_forest:
+      contamination: 0.1
+      n_estimators: 100
+    lstm:
+      sequence_length: 10
+      lstm_units: 64
+      epochs: 50
+  
+  power_profiling:
+    encoding_dim: 8
+    epochs: 100
+    anomaly_percentile: 95
+  
+  behavior_prediction:
+    n_estimators: 100
+    max_depth: 10
+
+# Device Settings
+devices:
+  smart_lock:
+    base_power: 3.0
+    active_power: 12.0
+    firmware_version: "1.2.0"
+  
+  smart_light:
+    base_power: 0.5
+    max_power: 60.0
+    firmware_version: "2.1.0"
+  
+  security_camera:
+    base_power: 8.0
+    active_power: 12.0
+    recording_power: 15.0
+    firmware_version: "3.0.1"
+
+# Edge Deployment Settings
+edge:
+  enable_edge_inference: true
+  model_optimization:
+    quantization: true
+    quantization_bits: 8
+    pruning: false
+    pruning_sparsity: 0.5
+  
+  max_model_size_mb: 10
+
+# Logging Settings
+logging:
+  level: INFO
+  log_to_file: true
+  log_file: logs/iot_security.log
+  log_to_blockchain: true  # Log critical events to blockchain
+
+# Alert Settings
+alerts:
+  enable_email: false
+  enable_sms: false
+  enable_webhook: false
+  webhook_url: ""
+  
+  alert_on:
+    - access_denied
+    - ml_anomaly
+    - power_anomaly
+    - behavior_anomaly
+    - firmware_tampering
+
+# Data Settings
+data:
+  training_data_dir: data/training
+  models_dir: models
+  logs_dir: logs
+  blockchain_backup: data/blockchain_backup.pkl

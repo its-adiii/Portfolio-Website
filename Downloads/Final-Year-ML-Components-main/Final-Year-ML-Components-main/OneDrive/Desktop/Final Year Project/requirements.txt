@@ -1,0 +1,29 @@
+# IoT ML Security System - Essential Dependencies Only
+
+# Core ML Libraries (Required)
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn==1.3.0
+tensorflow==2.13.0
+joblib==1.3.2
+
+# Configuration (Required)
+pyyaml==6.0.1
+
+# Edge ML & Model Optimization (Optional - for edge deployment)
+# Uncomment if using edge/edge_inference.py
+# onnx==1.14.0
+# onnxruntime==1.15.1
+
+# Data Visualization (Optional - for analysis)
+# Uncomment if you want to visualize data
+# matplotlib==3.7.2
+# seaborn==0.12.2
+
+# Removed Dependencies (Not needed for ML-focused version):
+# - web3, pycryptodome (blockchain removed)
+# - paho-mqtt, aiocoap (IoT devices removed)
+# - flask, flask-cors (API removed)
+# - torch (not used in current models)
+# - plotly, python-dotenv, requests, loguru (not essential)
+# - pytest (tests directory removed)
